@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
@@ -39,7 +38,7 @@ import { RouterSerializer } from './Store/routerSerializer';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryService),
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([MovieEffects]),
+    EffectsModule.forRoot([MovieEffects, ]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
